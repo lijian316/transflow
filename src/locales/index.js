@@ -135,7 +135,7 @@ export const messages = {
     // 关于我页面
     aboutMeTitle: '关于我们',
     aboutMeContent: '这是一个功能强大的多语言翻译管理系统，支持多种语言的翻译内容管理。',
-    developer: '开发者',
+    developerTitle: '开发者',
     version: '版本',
     contact: '联系方式',
     
@@ -167,7 +167,6 @@ export const messages = {
     loadMore: '继续加载10个',
     noMoreData: '没有更多数据了',
     backToTop: '回到顶部',
-    loading: '加载中...',
     
     // Landing Page
     home: '首页',
@@ -221,7 +220,6 @@ export const messages = {
     teamCollaboration: '团队协作',
     aboutTransFlow: '关于 TransFlow',
     companyIntro: '公司介绍',
-    contactUs: '联系我们',
     recruitment: '招聘信息',
     productServices: '产品服务',
     pricing: '价格方案',
@@ -230,11 +228,6 @@ export const messages = {
     helpCenter: '帮助中心',
     faq: '常见问题',
     aboutUs: '关于我们',
-    privacyPolicy: '隐私策略',
-    copyright: '© 2024 多语言翻译管理系统. 保留所有权利.',
-    confirm: '确定',
-    startNow: '立即开始',
-    dataSecurity: '数据安全',
     dataSecurityDesc: '所有数据存储在本地，不会上传到任何服务器',
     dataSecurityDesc2: '不收集任何个人信息或使用数据',
     dataSecurityDesc3: '支持数据导出和备份功能',
@@ -377,7 +370,7 @@ export const messages = {
     // About me page
     aboutMeTitle: 'About Us',
     aboutMeContent: 'This is a powerful multilingual translation management system that supports translation content management in multiple languages.',
-    developer: 'Developer',
+    developerTitle: 'Developer',
     version: 'Version',
     contact: 'Contact',
     
@@ -409,7 +402,6 @@ export const messages = {
     loadMore: 'Load 10 more',
     noMoreData: 'No more data',
     backToTop: 'Back to Top',
-    loading: 'Loading...',
     
     // Landing Page
     home: 'Home',
@@ -463,7 +455,6 @@ export const messages = {
     teamCollaboration: 'Team Collaboration',
     aboutTransFlow: 'About TransFlow',
     companyIntro: 'Company Introduction',
-    contactUs: 'Contact Us',
     recruitment: 'Recruitment',
     productServices: 'Product Services',
     pricing: 'Pricing Plans',
@@ -472,11 +463,6 @@ export const messages = {
     helpCenter: 'Help Center',
     faq: 'FAQ',
     aboutUs: 'About Us',
-    privacyPolicy: 'Privacy Policy',
-    copyright: '© 2024 Multilingual Translation Management System. All rights reserved.',
-    confirm: 'OK',
-    startNow: 'Start Now',
-    dataSecurity: 'Data Security',
     dataSecurityDesc: 'All data is stored locally and will not be uploaded to any server',
     dataSecurityDesc2: 'No personal information or usage data is collected',
     dataSecurityDesc3: 'Supports data export and backup features',
