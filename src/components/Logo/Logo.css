@@ -1,0 +1,185 @@
+/* Logo 基础样式 */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* 默认样式 */
+.logo-default {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.2);
+  min-width: 80px;
+}
+
+/* 简约样式 */
+.logo-minimal {
+  padding: 0.3rem 0.8rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  min-width: 60px;
+}
+
+/* 轮廓样式 */
+.logo-outlined {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.3);
+  min-width: 80px;
+}
+
+/* 尺寸变体 */
+.logo-small {
+  padding: 0.2rem 0.6rem;
+  min-width: 50px;
+}
+
+.logo-small .logo-text {
+  font-size: 1rem;
+}
+
+.logo-small .logo-subtitle {
+  font-size: 0.5rem;
+}
+
+.logo-normal {
+  padding: 0.5rem 1rem;
+  min-width: 80px;
+}
+
+.logo-normal .logo-text {
+  font-size: 1.5rem;
+}
+
+.logo-normal .logo-subtitle {
+  font-size: 0.7rem;
+}
+
+.logo-large {
+  padding: 0.8rem 1.5rem;
+  min-width: 120px;
+}
+
+.logo-large .logo-text {
+  font-size: 2rem;
+}
+
+.logo-large .logo-subtitle {
+  font-size: 0.9rem;
+}
+
+/* Logo 文字样式 */
+.logo-text {
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.logo-subtitle {
+  color: rgba(255,255,255,0.8);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-top: -2px;
+  line-height: 1;
+}
+
+/* 动画效果 */
+.logo-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: logoShine 3s ease-in-out infinite;
+}
+
+@keyframes logoShine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* 悬停效果已移除 */
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .logo-normal {
+    min-width: 60px;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .logo-normal .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .logo-normal .logo-subtitle {
+    font-size: 0.6rem;
+  }
+
+  .logo-large {
+    min-width: 100px;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .logo-large .logo-text {
+    font-size: 1.6rem;
+  }
+
+  .logo-large .logo-subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-normal {
+    min-width: 50px;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .logo-normal .logo-text {
+    font-size: 1rem;
+  }
+
+  .logo-normal .logo-subtitle {
+    font-size: 0.5rem;
+  }
+
+  .logo-large {
+    min-width: 80px;
+    padding: 0.4rem 1rem;
+  }
+
+  .logo-large .logo-text {
+    font-size: 1.4rem;
+  }
+
+  .logo-large .logo-subtitle {
+    font-size: 0.7rem;
+  }
+}
+
+/* 禁用状态 */
+.logo-container:disabled,
+.logo-container.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

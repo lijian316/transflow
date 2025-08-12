@@ -1,0 +1,710 @@
+/* Dashboard.css - 控制面板专用样式 */
+
+/* 全局宽度控制 - 防止任何元素撑开容器 */
+* {
+  box-sizing: border-box;
+}
+
+/* 强制全局宽度控制 */
+.app-container,
+.app-container *,
+.content-wrapper,
+.content-wrapper *,
+.main-content-section,
+.main-content-section *,
+.translation-cards-container,
+.translation-cards-container *,
+.translation-cards-grid,
+.translation-cards-grid *,
+.translation-card,
+.translation-card *,
+.ant-layout,
+.ant-layout *,
+.ant-layout-content,
+.ant-layout-content * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* 特别针对可能撑开的元素 */
+code, pre, .ant-typography-code {
+  max-width: 100% !important;
+  word-break: break-all !important;
+  white-space: pre-wrap !important;
+}
+
+/* 卡片布局样式 */
+.translation-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  contain: layout !important;
+}
+
+/* 为卡片容器设置固定宽度上下文 */
+.translation-cards-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  contain: layout !important;
+}
+
+@media (max-width: 768px) {
+  .translation-cards-grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .translation-cards-grid {
+    gap: 12px;
+  }
+}
+
+.translation-card {
+  border-radius: 12px;
+  border: 1px solid #e1e4e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  contain: layout !important;
+}
+
+/* 强制所有卡片子元素不能超出卡片宽度 */
+.translation-card * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.translation-card > * {
+  width: 100%;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+/* 覆盖Ant Design Card组件的默认样式 */
+.translation-card .ant-card-body {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+}
+
+.translation-card-header {
+  padding: 12px 24px 8px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #fafbfc;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: auto;
+  min-height: auto;
+}
+
+.translation-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #24292f;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.translation-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .translation-card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .translation-card-meta > div:last-child {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .translation-card-meta {
+    gap: 8px;
+  }
+}
+
+.translation-card-body {
+  padding: 8px 24px 12px 24px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: auto;
+  min-height: auto;
+}
+
+.translation-card-language-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 0;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+
+.translation-card-language-row:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .translation-card-language-row {
+    display: block;
+    padding: 4px 0;
+  }
+}
+
+.translation-card-language-label {
+  flex-shrink: 0;
+  width: 90px;
+  min-width: 90px;
+  max-width: 90px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #656d76;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding-top: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .translation-card-language-label {
+    display: block;
+    width: auto;
+    max-width: none;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 4px;
+  }
+  
+  .translation-card-language-content {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.translation-card-language-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  font-size: 13px;
+  line-height: 1.3;
+  word-break: break-all;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  max-height: 3.9em;
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.translation-card-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f0f0f0;
+  background-color: #fafbfc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .translation-card-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+}
+
+.translation-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .translation-card-actions {
+    justify-content: center;
+  }
+}
+
+.ant-layout {
+  min-height: 100vh;
+  background: #f6f8fa;
+}
+
+.content-wrapper {
+  background: #f6f8fa;
+  padding: 32px;
+  min-height: 100vh;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* 响应式内容区域 */
+@media (max-width: 1200px) {
+  .content-wrapper {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrapper {
+    padding: 12px;
+  }
+}
+
+/* 页面标题区域 */
+.page-title-section {
+  margin-bottom: 32px;
+}
+
+.page-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0;
+  letter-spacing: 0.5px;
+  min-width: 200px;
+}
+
+.page-title-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* 响应式页面标题 */
+@media (max-width: 992px) {
+  .page-title-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .page-title-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  
+  .page-title-actions .ant-select {
+    width: 100% !important;
+  }
+  
+  .page-title-actions .ant-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 22px;
+  }
+  
+  .page-title-container {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 20px;
+  }
+  
+  .page-title-container {
+    gap: 12px;
+  }
+  
+  .page-title-actions {
+    gap: 8px;
+  }
+}
+
+/* 统计卡片区域 */
+.stats-section {
+  margin-bottom: 32px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* 响应式统计卡片 */
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .stat-card {
+    padding: 16px;
+  }
+  
+  .stat-card-value {
+    font-size: 28px;
+  }
+  
+  .stat-card-label {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .stat-card {
+    padding: 14px;
+  }
+  
+  .stat-card-value {
+    font-size: 24px;
+  }
+  
+  .stat-card-label {
+    font-size: 10px;
+  }
+  
+  .stat-card-footer {
+    padding: 10px 14px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .stat-card {
+    padding: 16px;
+  }
+  
+  .stat-card-value {
+    font-size: 32px;
+  }
+  
+  .stat-card-label {
+    font-size: 12px;
+  }
+  
+  .stat-card-footer {
+    padding: 12px 16px 16px;
+  }
+  
+  .stat-card-footer > div {
+    min-height: 60px !important;
+    gap: 6px !important;
+  }
+  
+  .stat-card-change {
+    font-size: 12px;
+  }
+  
+  .stat-card .ant-btn {
+    padding: 2px 8px !important;
+    height: auto !important;
+    font-size: 11px !important;
+  }
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card-header {
+  padding: 20px 24px 16px;
+  background: white;
+}
+
+.stat-card-value {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-card-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #656d76;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.stat-card-footer {
+  padding: 12px 24px 20px;
+  background: #f6f8fa;
+  border-top: 1px solid #e8eaed;
+}
+
+.stat-card-change {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stat-card-change.positive {
+  color: #2da44e;
+}
+
+.stat-card-change.negative {
+  color: #cf222e;
+}
+
+.stat-card-change.neutral {
+  color: #656d76;
+}
+
+/* 主体内容区域 */
+.main-content-section {
+  background: white;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.main-content-title-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main-content-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #24292f;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.main-content-body {
+  padding: 24px;
+}
+
+/* 操作工具栏 */
+.action-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #fafbfc;
+  border: 1px solid #e8eaed;
+  border-radius: 6px;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbar-left .ant-btn,
+.toolbar-right .ant-btn {
+  height: 32px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.toolbar-left .ant-input-search,
+.toolbar-right .ant-input-search {
+  width: 250px;
+}
+
+/* 状态消息样式 */
+.status-message {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border-left: 4px solid;
+}
+
+.status-message.success {
+  background-color: #f6ffed;
+  border-color: #52c41a;
+  color: #52c41a;
+}
+
+.status-message.error {
+  background-color: #fff2f0;
+  border-color: #ff4d4f;
+  color: #ff4d4f;
+}
+
+/* 加载状态样式 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* 空状态样式 */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.empty-state h3 {
+  margin-bottom: 16px;
+  color: #495057;
+  font-size: 18px;
+}
+
+.empty-state p {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* 操作按钮样式 */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.action-buttons .ant-btn {
+  padding: 4px 8px;
+  height: auto;
+  font-size: 12px;
+}
+
+/* 标签管理区域滚动条样式 */
+.stat-card-footer::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.stat-card-footer::-webkit-scrollbar-track {
+  display: none;
+}
+
+.stat-card-footer::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+.stat-card-footer::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.stat-card-footer::-webkit-scrollbar-button {
+  display: none;
+}
+
+.stat-card-footer {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
